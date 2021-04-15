@@ -15,7 +15,7 @@
         <br>
 
         <label for="texte">Texte</label>
-        <input type="textarea" name="texte">
+        <textarea name="texte" rows="12" cols="100"></textarea>
 
         <br>
 
