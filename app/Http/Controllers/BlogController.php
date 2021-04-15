@@ -7,20 +7,21 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
+    public function create() {
+        return view('admin.blog.blogCreate');
+    }
+    public function store(Request $request){
+        // dd($request->nom);
+        $blogItem = new Blog();
+        $blogItem->image = $request->image;
+        $blogItem->titre = $request->titre;
+        $blogItem->texte = $request->texte;
+        $blogItem->save();
+        // return redirect()->back();
+        return redirect()->route('home');
+    }
     public function index() {
         $varBlog = Blog::all();
-        // $varBlog = [
-        //     (object) [
-        //         "image" => './img/portfolio-1.jpg',
-        //         "titre" => 'Is Passion Good For Business?',
-        //         "texte" => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        //     ],
-        //     (object) [
-        //         "image" => './img/portfolio-1.jpg',
-        //         "titre" => 'Is Passion Good For Business?',
-        //         "texte" => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        //     ],
-        // ];
         return view('pages.blog', compact('varBlog'));
     }
 }

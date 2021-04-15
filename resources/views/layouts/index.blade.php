@@ -50,11 +50,5 @@
     <script src={{asset('public/js/jquery.countTo.min.js')}}></script>
     <script src={{asset('public/js/script.js')}}></script>
 
-    {{-- <script src={{asset('public/js/app.js')}}></script>
-    <script src={{asset('public/js/jquery.shuffle.min.js')}}></script>
-    <script src={{asset('public/js/jquery.countTo.min.js')}}></script>
-    <script src={{asset('public/js/script.js')}}></script>
-    <script src={{asset('vendor/jquery/jquery.min.js')}}></script>
-    <script src={{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}></script> --}}
 </body>
 </html>
