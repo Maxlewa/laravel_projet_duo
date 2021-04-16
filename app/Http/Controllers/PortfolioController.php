@@ -20,8 +20,8 @@ class PortfolioController extends Controller
         // return redirect()->back();
         return redirect()->route('home');
     }
-    public function index() {
-        $varPortfolio = Portfolio::all();
-        return view('pages.portfolio', compact('varPortfolio'));
+    public function destroy(Portfolio $id) {
+        $id->delete();
+        return redirect()->back();
     }
 }

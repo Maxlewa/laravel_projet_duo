@@ -20,8 +20,8 @@ class BlogController extends Controller
         // return redirect()->back();
         return redirect()->route('home');
     }
-    public function index() {
-        $varBlog = Blog::all();
-        return view('pages.blog', compact('varBlog'));
+    public function destroy(Blog $id) {
+        $id->delete();
+        return redirect()->back();
     }
 }
