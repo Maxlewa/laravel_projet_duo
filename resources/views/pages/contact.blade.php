@@ -55,5 +55,7 @@
         </section><!-- /.section-contact-us -->
 
     </main><!-- /.site-main -->
+
+    @include('partial.footer')
     
 @endsection

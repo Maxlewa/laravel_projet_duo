@@ -35,4 +35,6 @@
 
     </main><!-- /.site-main -->
 
+    @include('partial.footer')
+
 @endsection
