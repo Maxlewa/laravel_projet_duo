@@ -8,7 +8,7 @@
             @method('PUT')
             <div class="form-group">
                 <label for="image">Image</label>
-                <input type="text" value="{{$blog->titre}}" class="form-control" id="image" name="image" placeholder="{{$blog->image}}">
+                <input type="text" value="{{$blog->image}}" class="form-control" id="image" name="image" placeholder="{{$blog->image}}">
             </div>
             <div class="form-group">
                 <label for="titre">Titre</label>
