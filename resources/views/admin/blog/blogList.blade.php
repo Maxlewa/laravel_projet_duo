@@ -7,16 +7,17 @@
         padding-left: 20px;
         padding-right: 20px;
     }
+    .btn-show,
+    .btn-delete {
+        color: white !important;  
+        border-radius: 7px !important;      
+    }
     .btn-show {
-        color: white !important;
         background-color: rgb(3, 77, 3) !important;
-        border-radius: 7px !important;
         margin-right: 20px;
     }
     .btn-delete {
-        color: white !important;
         background-color: rgb(209, 0, 0) !important;
-        border-radius: 7px !important;
     }
     .divForeach {
         margin-top: 40px !important;
@@ -38,7 +39,8 @@
         border-radius: 7px !important;
         margin-top: 20px;
         margin-right: 20px;
-        width: 20%
+        width: 20%;
+        margin-bottom: 100px !important;
     }
     .btn-lightgreen {
         background-color: rgb(0, 189, 47) !important;
