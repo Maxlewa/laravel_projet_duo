@@ -7,20 +7,24 @@ use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\Route;
 
 
-/* ___________ FRONT ___________ */
+/* ________________________ FRONT ________________________ */
 
 Route::get('/', [FrontController::class, 'home']) -> name('home');
 Route::get('/blog', [FrontController::class, 'blog']) -> name('blog');
 Route::get('/portfolio', [FrontController::class, 'portfolio']) -> name('portfolio');
 Route::get('/contact', [FrontController::class, 'contact']) -> name('contact');
 
+// ADMIN
+
 Route::get('/admin', [AdminController::class, 'index'])->name('adminHome');
+Route::get('/admin/bloglist', [AdminController::class, 'blogList'])->name('blogList');
+Route::get('/admin/portfoliolist', [AdminController::class, 'portfolioList'])->name('portfolioList');
 
-/* ___________ BACK ___________ */
+/* ________________________ BACK ________________________ */
 
-// BLOG
+// ___________ BLOG
 
-// Create
+// Create - Store
 
 Route::get('/admin/blog/create', [BlogController::class, 'create'])->name('blogArticle.create');
 Route::post('/admin/blog/store', [BlogController::class, 'store'])->name('blogArticle.store');
@@ -29,7 +33,17 @@ Route::post('/admin/blog/store', [BlogController::class, 'store'])->name('blogAr
 
 Route::delete('/admin/blog/{id}/delete', [BlogController::class, 'destroy'])->name('blogArticle.destroy');
 
-// PORTFOLIO
+// Show
+
+Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blogArticle.show');
+
+// Edit - Update
+
+Route::get('/admin/blog/{id}/edit', [BlogController::class, 'edit'])->name('blogArticle.edit');
+Route::put('/admin/blog/{id}/update', [BlogController::class, 'update'])->name('blogArticle.update');
+
+
+// ___________ PORTFOLIO
 
 // Create
 
@@ -39,3 +53,12 @@ Route::post('/admin/portfolio/store', [PortfolioController::class, 'store'])->na
 // Delete
 
 Route::delete('/admin/portfolio/{id}/delete', [PortfolioController::class, 'destroy'])->name('portfolioArticle.destroy');
+
+// Show
+
+Route::get('/portfolio/{id}', [PortfolioController::class, 'show'])->name('portfolioArticle.show');
+
+// Edit - Update
+
+Route::get('/admin/portfolio/{id}/edit', [PortfolioController::class, 'edit'])->name('portfolioArticle.edit');
+Route::put('/admin/portfolio/{id}/update', [PortfolioController::class, 'update'])->name('portfolioArticle.update');

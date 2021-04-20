@@ -3,11 +3,11 @@
 @section('content')
     <br>
     <br>
-
-    <h2 class="text-center"><a href={{route('blogArticle.create')}}>Ajouter un article blog</a></h2>
-    <h2 class="text-center"><a href={{route('portfolioArticle.create')}}>Ajouter un article portfolio</a></h2>
-
-    <h1>BLOG</h1>
+    <div class="text-center">
+        <a href={{route('blogList')}}><button class="btn">Liste des articles blog</button></a>
+        <a href={{route('portfolioList')}}><button class="btn">Liste des articles portfolio</button></a>
+    </div>
+    {{-- <h1>BLOG</h1>
 
     @foreach ($varBlog as $blog)
     <div class="d-flex">
@@ -18,9 +18,9 @@
             <button class="btn btn-danger" type="submit">Delete</button>
         </form>
     </div>
-    @endforeach
+    @endforeach --}}
 
-    <h1>PORTFOLIO</h1>
+    {{-- <h1>PORTFOLIO</h1>
 
     @foreach ($varPortfolio as $portfolio)
     <div class="d-flex">
@@ -31,8 +31,12 @@
             <button class="btn btn-danger" type="submit">Delete</button>
         </form>
     </div>
-    @endforeach
+    @endforeach --}}
 
+    <br>
+    <div class="text-center">
+        <a href="{{route('home')}}"><button class="btn btn-dark mt-4">Retour au site</button></a>
+    </div>
     <br>
     <br>
 @endsection

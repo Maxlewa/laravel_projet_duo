@@ -24,4 +24,20 @@ class PortfolioController extends Controller
         $id->delete();
         return redirect()->back();
     }
+    public function show(Portfolio $id) {
+        $portfolio = $id;
+        return view('admin.portfolio.portfolioShow', compact('portfolio'));
+    }
+    public function edit(Portfolio $id) {
+        $portfolio = $id;
+        return view('admin.portfolio.portfolioEdit', compact('portfolio'));
+    }
+    public function update(Portfolio $id, Request $request) {
+        $portfolio = $id;
+        $portfolio ->image = $request->image;
+        $portfolio ->titre = $request->titre;
+        $portfolio ->texte = $request->texte;
+        $portfolio ->save();
+        return redirect('/admin' . $portfolio ->$id);
+    }
 }
