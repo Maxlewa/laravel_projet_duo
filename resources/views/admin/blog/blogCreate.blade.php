@@ -1,24 +1,41 @@
+<style type="text/css">
+    .blogCreateH1 {
+        margin-bottom: 40px;
+    }
+    .divForm {
+        width: 60%;
+        margin: auto;
+    }
+</style>
+
 @extends('layouts.index')
 
 @section('content')
-    <h1>Article BLOG</h1>
-    <form method="POST" action={{route('blogArticle.store')}}>
-        @csrf
-        <label for="image">Image</label>
-        <input type="text" name="image">
+    <br>
+    <br>
+    <div class="text-center">
+        <h1 class="blogCreateH1">Créer un article BLOG</h1>
+        <hr>
+    </div>
+    <div class="divForm">
+        <form method="POST" action={{route('blogArticle.store')}}>
+            @csrf
+            <label for="image">Image</label>
+            <input type="text" name="image">
 
-        <br>
+            <br>
 
-        <label for="titre">Titre</label>
-        <input type="text" name="titre">
+            <label for="titre">Titre</label>
+            <input type="text" name="titre">
 
-        <br>
+            <br>
 
-        <label for="texte">Texte</label>
-        <textarea name="texte" rows="12" cols="100"></textarea>
+            <label for="texte">Texte</label>
+            <textarea name="texte" rows="12" cols="100"></textarea>
 
-        <br>
+            <br>
 
-        <button type="submit">SUBMIT</button>
-    </form>
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
 @endsection
